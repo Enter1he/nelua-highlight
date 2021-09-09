@@ -2,4 +2,4 @@
 
 Small syntax highlighter for nelua in vs-code
  
-![til](./Snap.png)
+![til](./Snap.PNG)
