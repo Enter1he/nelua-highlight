@@ -1,0 +1,119 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "nelua",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#line_comments"
+		},
+		{
+			"include": "#multi_comments"
+		},
+		{
+			"include": "#macroses"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.nelua",
+				"match": "\\b(if|while|for|return|break|continue|function|local|global|repeat|until|do|end|defer)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.nelua",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nelua",
+					"match": "\\\\."
+				}
+			]
+		},
+		"variables":{
+			"patterns": [{
+				"name" : "variable.other.nelua",
+				"match": "\\b[_[:alpha:]][_[:alnum:]]*\\b"
+			}]
+		},
+		"types":{
+			"patterns": [{
+				"name" : "entity.name.type",
+				"match": "\\s+[@:]+[_[:alpha:]][_[:alnum:]]*"
+			}]
+		},
+		"line_comments":{
+			"begin": "(^[ \\t]+)?(?=--)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.nelua"
+				}
+			},
+			"end": "(?!\\G)((?!^)[ \\t]+\\n)?",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.trailing.nelua"
+				}
+			},
+			"patterns": [
+				{
+					"begin": "--\\[(=*)\\[",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.nelua"
+						}
+					},
+					"end": "\\]\\1\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.nelua"
+						}
+					},
+					"name": "comment.block.nelua"
+				},
+				{
+					"begin": "--",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.nelua"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.double-dash.nelua"
+				}
+			]
+		},
+		"multi_comments": {
+			"begin": "(?<!--)\\[(=*)\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.nelua"
+				}
+			},
+			"end": "\\]\\1\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.nelua"
+				}
+			},
+			"name": "string.quoted.other.multiline.nelua"
+		},
+		"macroses":{
+			"match": "##|##\\[\\[",
+			"name":"meta.preprocessor"
+		}
+	},
+	"scopeName": "source.nelua"
+}

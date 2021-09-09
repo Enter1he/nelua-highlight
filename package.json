@@ -1,0 +1,25 @@
+{
+    "name": "nelua-highlight",
+    "displayName": "nelua-highlight",
+    "description": "nelua linter",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lua",
+            "aliases": ["nelua", "lua"],
+            "extensions": [".nelua"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lua",
+            "scopeName": "source.nelua",
+            "path": "./syntaxes/lua.tmLanguage.json"
+        }]
+    }
+}
