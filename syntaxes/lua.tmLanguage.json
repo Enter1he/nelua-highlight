@@ -6,6 +6,12 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#constants"
+		},
+		{
+			"include": "#logicals"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -30,6 +36,14 @@
 				"name": "keyword.control.nelua",
 				"match": "\\b(if|while|for|return|break|continue|function|local|global|repeat|until|do|end|defer)\\b"
 			}]
+		},
+		"constants":{
+			"match": "\\b(nil|true|false|_G|_VERSION|\\.\\.\\.)\\b",
+			"name":"constant.language.nelua"
+		},
+		"logicals":{
+			"match":"\\b(or|and|not|\\.\\.\\.)\\b",
+			"name":"keyword.operator"
 		},
 		"strings": {
 			"name": "string.quoted.double.nelua",
