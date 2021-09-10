@@ -47,8 +47,8 @@
 		},
 		"strings": {
 			"name": "string.quoted.double.nelua",
-			"begin": "\"",
-			"end": "\"",
+			"begin": "[\"|']",
+			"end": "\"|'",
 			"patterns": [
 				{
 					"name": "constant.character.escape.nelua",
