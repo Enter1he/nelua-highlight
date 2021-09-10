@@ -34,7 +34,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nelua",
-				"match": "\\b(if|while|for|return|break|continue|function|local|global|repeat|until|do|end|defer)\\b"
+				"match": "\\b(if|else|elseif|switch|case|while|for|return|break|continue|then|function|local|global|repeat|until|do|end|defer)\\b"
 			}]
 		},
 		"constants":{
@@ -125,7 +125,7 @@
 			"name": "string.quoted.other.multiline.nelua"
 		},
 		"macroses":{
-			"match": "##|##\\[\\[",
+			"match": "#\\[|\\]#|##|##\\[\\[",
 			"name":"meta.preprocessor"
 		}
 	},
