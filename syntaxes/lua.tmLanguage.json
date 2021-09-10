@@ -65,7 +65,7 @@
 		"types":{
 			"patterns": [{
 				"name" : "entity.name.type",
-				"match": "\\s+[@:]+[_[:alpha:]][_[:alnum:]]*"
+				"match": "\\s+[@:]+[\\*\\[\\]_[:alpha:][:alnum:]]*"
 			}]
 		},
 		"line_comments":{
